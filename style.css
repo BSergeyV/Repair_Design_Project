@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;1,400&family=Yeseva+One&display=swap');
 
-:root {
     /* Colors */
+:root {
     --primary:#E3B873;
     --dark:#131313;
     --light: #FFFFFF;
-
 }
 
 body {
@@ -357,11 +356,8 @@ input[name="r"] {
 .left-scroll, .right-scroll, .bar {
     cursor: pointer;
 }
-.left_arrow {
-    margin: 0px -9px 0px 0px;
-}
-.line1 {
-    padding: 0px 17px 5px 0px;
+.left-scroll {
+    padding: 0px 25px 0px 0px;
 }
 .bar {
     height: 11px;
@@ -377,11 +373,8 @@ input[name="r"] {
     opacity: 0.8;
     transform: scale(1.1);
 }
-.line2 {
-    padding: 0px 0px 5px 25px;
-}
-.right_arrow {
-    margin: 0px 0px 0px -8px;
+.right-scroll {
+    padding: 0px 0px 0px 25px;
 }
 
 /* block-content three */
@@ -656,7 +649,7 @@ hr {
     margin: -39px 0px 60px 289px;
     height: 114px;
     width: 114px;
-    background: url(/images/Ellipse_2.png) no-repeat;
+    background: url(images/Ellipse_2.svg) no-repeat;
     background-size: contain;
 }
 .specialist__services .icon p {
@@ -1141,7 +1134,7 @@ iframe {
 
 /* block-content two*/
 
-    .hero2__work br, .hero2-navigation, .scroll, .navigation label, .line1, .line2 {
+    .hero2__work br, .hero2-navigation, .scroll, .navigation label, .directon{
         display: none;
     }
     .hero2-text__content .title1 {
@@ -1173,8 +1166,11 @@ iframe {
     .right-scroll, .left-scroll {
         width: 3rem;
         height: 3rem;
-        background-color: var(--primary);
         border-radius: 50%;
+    }
+    .left-scroll {
+        background: url(images/left_arrow.svg) 50% no-repeat;
+        background-color: var(--primary);
     }
     .right_arrow, .left_arrow {
         right: 50%;
@@ -1184,6 +1180,8 @@ iframe {
         width: 1rem;
     }
     .right-scroll {
+        background: url(images/right_arrow.svg) 50% no-repeat;
+        background-color: var(--primary);
         margin: 0% 0% 0% 88.6%;
     }
     .navigation {
