@@ -33,7 +33,7 @@ body {
     z-index: 2;
 }
 
-button {
+.header__button {
     text-align: center;
     cursor: pointer;
     font-family: 'Nunito Sans';
@@ -49,7 +49,7 @@ span {
     color: var(--light);
 }
 
-.header-button, .footer-button {
+.header__button, .footer__button {
     box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
     border-radius: 2px;
     font-weight: 400;
@@ -61,8 +61,7 @@ span {
 }
 
 .logo {
-    margin-top: 5px;
-    margin-left: -6px;
+    margin: 5px 0px 0px -6px;
     font-family: 'Nunito Sans';
     font-weight: 400;
     font-size: 11px;
@@ -72,13 +71,13 @@ span {
     color: var(--primary);
 }
 
-.header-navigation, .footer-navigation {
+.header-nav__list, .footer-nav__list {
     margin-left: 54px;
     list-style: none;
     display: flex;
 }
 
-.header-navigation__item, .footer-navigation__item {
+.header-nav__item, .footer-nav__item {
     font-family: 'Nunito Sans';
     font-weight: 400;
     font-size: 11px;
@@ -88,16 +87,16 @@ span {
     letter-spacing: 0.4px;
 }
 
-.header-navigation__item a, .footer-navigation__item a {
+.header-nav__link, .footer-nav__link {
     text-decoration: none;
     color: var(--light);
 }
 
-a:hover {
+.header-nav__link:hover,.footer-nav__link:hover {
     color: var(--primary);
 }
 
-.phone {
+.header__phone{
     margin-top: 3px;
     color: var(--primary);
     font-family: 'Nunito Sans';
@@ -117,7 +116,7 @@ a:hover {
     padding-top: 194px;
 }
 
-.hero-container {
+.hero__container {
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
@@ -138,7 +137,7 @@ a:hover {
     z-index: 1;
 }
 
-.title {
+.hero__label {
     margin: 24px 43px;
     font-family: 'Yeseva One';
     font-weight: 400;
@@ -149,20 +148,15 @@ a:hover {
     color: var(--light);
 }
 
-h1 span {
+.hero__label span {
     color: var(--primary);
 }
 
 
-.work {
-    margin: 20px 7px;
-}
-
-.hero__work {
+.hero__text {
     max-width: 600px;
-    margin-top: -3px ;
-    margin-left: 37px;
     font-family: 'Nunito Sans';
+    margin: -3px 0px 0px 44px;
     line-height: 41px;
     font-size: 25px;
     letter-spacing: 0.33px;  
@@ -175,16 +169,17 @@ h1 span {
     display: flex;
 }
 
-.calculate__button {
+.hero__button--left {
     margin-left: 41px;
     padding: 20px 52px;
     font-size: 11px;
     letter-spacing: 1px; 
     border: none;
+    background: var(--primary);
     color: var(--light);
 }
 
-.submit__button {
+.hero__button--right {
     margin-left: 24px;
     padding: 20px 33px;
     background: rgba(0, 0, 0, 0);
@@ -210,11 +205,11 @@ h1 span {
     justify-content: space-between;
 }
 
-.completed_project {
+.hero2__container {
     max-width: 1440px;
     margin: -5px 0px 0px 230px;
 }
-.hero2-navigation {
+.hero2__list {
     font-family: 'Yeseva One';
     font-style: 'Regular';
     margin: 5px 0px 0px 502px;
@@ -229,38 +224,49 @@ h1 span {
     list-style: none;
 }
 
-.hero2-navigation__item {
+.hero2__item {
     margin: 120px 0px 0px 70px;
 }
 
-.hero2-navigation__item a {
+.hero2__link {
     color: rgb(255, 255, 255, 0.3);
     text-decoration: none;
 }
 
-.hero2-navigation__item a:hover {
+.hero2__link:hover {
     color: var(--primary);
     text-decoration: underline;
     text-underline-offset: 15px;
 }
 
-.hero2-title {
-    color: var(--primary);
+.hero2__content {
+    display: flex;
+    justify-content: space-between;
 }
 
-.hero2-text__content {
+.projects {
     max-width: 600px;
 }
 
-.hero2-text__content .title1 {
+.projects__title--top, .projects__title {
     font-family: 'Yeseva One';
+    white-space: nowrap;
     font-weight: 400;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.projects__title--top {
     line-height: 39px;
     font-size: 29px;
     transform: scaleY(1.09);
     margin: 61px 0px 0px 44px;
-    text-transform: uppercase;
     letter-spacing: -0.5px;
+}
+
+.projects__title {
+    line-height: 34px;
+    font-size: 20px;
 }
 
 .hero2__work {
@@ -271,7 +277,8 @@ h1 span {
     color: var(--light);
 }
 
-.group_of_works {
+.projects__plan {
+    max-width: 600px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -284,13 +291,6 @@ h1 span {
     letter-spacing: 0.4px;
 }
 
-.hero2-title {
-    font-family: 'Yeseva One';
-    white-space: nowrap;
-    line-height: 34px;
-    font-size: 20px;
-    text-transform: uppercase;
-}
 
 .hero2-data {
     display: block;
@@ -346,17 +346,17 @@ input[name="r"] {
     margin-left: -66.66%;
 }
 
-.hero2-text__content .navigation {
+.slider__navigation {
     position: absolute;
     bottom: 38.29%;
     left: 20.8%;
     transform:  translateX(-50%);
     display: flex;
 }
-.left-scroll, .right-scroll, .bar {
+.slider__navigation--leftScroll, .slider__navigation--rightScroll, .bar {
     cursor: pointer;
 }
-.left-scroll {
+.slider__navigation--leftScroll {
     padding: 0px 25px 0px 0px;
 }
 .bar {
@@ -373,7 +373,7 @@ input[name="r"] {
     opacity: 0.8;
     transform: scale(1.1);
 }
-.right-scroll {
+.slider__navigation--rightScroll {
     padding: 0px 0px 0px 25px;
 }
 
@@ -385,68 +385,71 @@ input[name="r"] {
     margin: 0 auto;
     z-index: 3;
 }
-.hero3-title {
+.hero3__title {
     font-family: 'Yeseva One';
-    margin: -377px 0px 0px 619px;
+    margin: -374px 0px 0px 619px;
     font-size: 23px;
     text-transform: uppercase;
     color: var(--light);
 }
-.hero3-icon {
+.hero3__icon {
     display: flex;
     align-items: center;
     margin-left: 654px;
     margin-top: -3px;
-    margin: 20px 0px 0px 654px;
+    margin: 17px 0px 0px 654px;
 }
-.left-line2, .right-line2 {
+.hero3__icon--leftLline, .hero3__icon--rightLine {
     height: 3px;
     width: 36px;
 }
-.left-line2 {
+.hero3__icon--leftLline {
     margin-left: 1px;
 }
-.right-line2 {
+.hero3__icon--rightLine {
     margin-left: 10px;
 }
-.camera-icon {
+.hero3__iconCamera {
     height: 34px;
     width: 39.7px;
     margin-left: 10px;
 }
-.hero3_image {
+.hero3__video {
     height: 500px;
     width: 942px;
-    margin: 33px 0px 0px 250px;
+    margin: 35px 0px 0px 250px;
 }
-.hero3_image-overlay {
+.hero3__image {
+    height: 500px;
+    width: 942px;
+}
+.hero3__image--overlay {
     content: '';
-    margin: -505px 0px 0px 250px;
+    margin: -505px 0px 0px 0px;
     height: 501px;
     width: 942px;
     position: relative;
     background-color:rgb(0, 0, 0, 0.7);
     z-index: 1;
 }
-.play {
+.hero3__videoPlay {
     position: relative;
-    margin: -327px 0px 0px 1191px;
-    border-radius: 50%;
+    margin: -327px 0px 0px 941px;
     z-index: 2;
 }
-.hero3_ellipse {
+.hero3__videoPlayEllipse {
     height: 165.5px;
     width: 165.5px;
     margin: 0px 0px 222px -555px;
 }
-.hero3_polygon {
+.hero3__videoPlayPolygon {
     height: 29px;
     width: 24px;
     margin-left: -96px;
     margin-bottom: 295px;
 }
 hr {
-    margin-top: 9px;
+    margin-top: 72px;
     display: block;
     border: 0;
     background: var(--primary);
@@ -493,20 +496,23 @@ hr {
 }
 .button__submit {
     font-size: 15px;
+    background: var(--primary);
+    color: var(--light);
+    text-transform: uppercase;
+    border: none;
     margin: 0px 0px 0px 143px;
     padding: 24px 88px 15px 88px;
 }
 
 /* Checkbox */
 
-.label {
-    margin: -2px 0px 0px 2px;
+.checkboxFirst__label {
     cursor: pointer;
 }
 .checkbox{
     display: none;
 }
-.fake{
+.checkbox__fake{
     display: inline-flex;
     width: 23px;
     height: 23px;
@@ -514,28 +520,24 @@ hr {
     color: #fff;
     justify-content: center;
 }                             
-.first-checkbox .fake {
-    width: 18px;
-    height: 18px;
-}
-.fake::before{
+.checkbox__fake::before{
     content:"\2714";
     opacity: 0;
     transition: 0.2s;
 }
-.checkbox:checked + .fake::before{
+.checkbox:checked + .checkbox__fake::before{
     opacity: 1;
 }
-.first-checkbox {
-    margin: 36px 0px 0px 550px;
+.checkboxFirst {
+    margin: 38px 0px 0px 549px;
 }
-.first-checkbox .text, .second-checkbox .text, .third-checkbox .text {
+.checkboxFirst__text, .checkbox__second .text, .checkboxThird__text {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
 }
-.first-checkbox .text{
+.checkboxFirst__text{
     padding-left: 8px;
     color: var(--dark);
 }
@@ -553,58 +555,51 @@ hr {
     font-weight: 400;
     font-size: 24px;
     text-align: center;
-    margin: 80px 0px 0px -8px;
+    margin: 75px 0px 0px -8px;
     letter-spacing: -0.5px;
 }
 .hero4__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 19px 0px 0px -10px;
+    width: 130px;
+    height: 70px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.line__tool {
-    margin: -3px 9px 0px 13px;
-    width: 38px;
-    height: 2.5px;
-}
-.tool {
-    height: 32px;
-    width: 134px;
-    margin: -1px 0px 1px 7px;
-}
-.types__repair {
+.hero4__content--top {
     display: flex;
     justify-content: space-between;
-    margin: 34px 8px 0px 7px;
+    margin: 14px 8px 0px 7px;
 }
-.img__repair {
+.ticket_bg {
     width: 452px;
     height: 485px;    
 }
-.services{
+.ticket__text{
     position: relative;
-    max-width: 341px;
+    max-width: 381px;
     padding-left: -50px;
     background-color: var(--light);
-    margin: -209px 0px 0px 36px;
+    margin: -210px 0px 0px 36px;
     font-size: 20px;
 }
-.services h3 {
+.ticket__title {
     font-family: 'Yeseva One';
     font-weight: 400;
     font-size: 21px;
     line-height: 78px;
-    margin: 60px 0px -14px -2px;
+    margin: 60px 0px -14px 35px;
 }
-.services li {
+.ticket__list {
+    margin: 0px 0px 0px 11px;
+}
+.ticket__item {
     font-family: 'Nunito Sans';
     font-weight: 400;
     font-size: 14px;
     line-height: 30.5px;
-    margin: 0px 0px 0px 10px;
     padding-left: 0px;
 }
-.services ~ div {
+.ticket__price {
     font-family: 'Yeseva One';
     font-style: normal;
     background-color: var(--primary);
@@ -620,7 +615,7 @@ hr {
     margin: 22px -10px 0px 35px;
     padding: 20px 19px 18px 23px;
 }
-.specialist__services {
+.hero4__content--bottom-left {
     display: block;
     height: 1000px;
     width: 1000px;
@@ -629,7 +624,7 @@ hr {
     margin: 290px 0px 0px -230px;
     padding-top: 86px;
 }
-.specialist__services div div {
+.hero4__text {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -638,7 +633,7 @@ hr {
     max-width: 450px;
     margin: -151px 0px 150px 395px;
 }
-.specialist__services .icon {
+.hero4__content-icon {
     position: relative;
     font-family: 'Yeseva One';
     font-style: normal;
@@ -652,35 +647,38 @@ hr {
     background: url(images/Ellipse_2.svg) no-repeat;
     background-size: contain;
 }
-.specialist__services .icon p {
+.hero4__content-icon--inside {
     font-size: 24px;
     padding: 10px 0px 0px 2px;
 }
 
-.request {
+.formRequest {
     font-family: 'Nunito Sans';
     margin: -1027px 0px 0px 844px;
     height: 657px;
     width: 652px;
     background-color: #131313;
 }
-.request__title {
+.formRequest__title {
     color: var(--light);
+    font-weight: 400;
     text-align: center;
-    font-size: 23px;
-    line-height: 34px;
-    padding-top: 35px;
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 37px;
+    letter-spacing: -0.5px;
 }
-.request__item {
+.formRequest__item {
     margin: 41px 0px 60px 62px;
-    line-height: 27px;
+    line-height: 26px;
     color: rgba(255, 255, 255, 0.5);
 }
-.request__lable {
+.formRequest__lable {
     display: block;
+    line-height: 33px;
     font-size: 16px;
 }
-.request__input {
+.formRequest__input {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     width: 522px;
@@ -689,33 +687,37 @@ hr {
     font-size: 18px;
     padding-bottom: 8px;
 }
-.request .button__submit {
+.formRequest__button {
+    background: var(--primary);
+    color: var(--light);
+    text-transform: uppercase;
     font-size: 16px;
-    padding: 24px 51px 21px 53px;
+    padding: 24px 45px 21px 53px;
     margin: 14px 0px 0px 314px;
     letter-spacing: 0.4px;
 }
-.second-checkbox {
-    margin: -37px 0px 0px 61px;
+.checkboxSecond {
+    margin: -34px 0px 0px 65px;
 }
-.second-checkbox .label, .third-checkbox .label {
+.checkboxSecond__label, .checkboxThird__label {
     display: inline-block;
     max-width: 350px;
 }
-.second-checkbox .text, .third-checkbox .text {
+.checkboxSecond__text, .checkboxThird__text {
     display: inline-block;
     font-size: 16px;
     line-height: 29px;
     letter-spacing: 0.9px;
     margin: -22px 0px 0px 36px;
 }
-.piggy {
+.discount__img{
     display: block;
     width: 146px;
     height: 146px;
     margin: 35px 20px 0px 859.5px;
 }
-.benefit div {
+
+.discount__text {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
@@ -736,7 +738,7 @@ hr {
     margin: 0 auto;
     z-index: 0;
 }
-.hero5 .container {
+.hero5__container {
     position: relative;
     margin: 322px 0px 0px 0px;
     z-index: 2;
@@ -749,7 +751,7 @@ hr {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
-.hero5 .title {
+.hero5__title {
     position: relative;
     font-family: 'Yeseva One';
     font-weight: 400;
@@ -758,55 +760,53 @@ hr {
     color: var(--primary);
     text-transform: uppercase;
     width: 400px;
-    padding: 175px 0px 0px 86px;
+    padding: 175px 0px 0px 130px;
     letter-spacing: 0.5px;
     z-index: 2;
 }
-
-
-.hero5 .container .navigation .item  {
+.hero5__nav {
+    margin-top: -10px;
+}
+.hero5__item  {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 34.8px;
+    line-height: 34.3px;
     color: rgb(255, 255, 255, 0.3);
     color: var(--light);
     padding: 29px 0px 0px 90px ;
     letter-spacing: 0.4px;
     list-style-type: none;
 }
-.hero5 .container .navigation .item a {
+.hero5__link {
     color: var(--light);
     text-decoration: none;
 }
 
-.hero5 .navigation .item a:hover {
+.hero5__link:hover {
     color: var(--primary);
     text-decoration: underline;
     text-underline-offset: 7px;
 }
-.your__fantasies {
+.hero5__imeg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: -1158px 120px 0px 40%;
+    margin: -1153px 110px 0px 759px;
 }
-.your__fantasies img {
+.hero5__imeg  img {
     width: 457px;
     margin-bottom: 53px;
     margin: 0px 60px 53px 0px;
 }
-.your__fantasies :first-child {
+.hero5__imeg  :first-child {
     height: 718px;
     margin-top: 93px;
     margin-bottom: 51px;
 }
-.your__fantasies :last-child {
+.hero5__imeg  :last-child {
     height: 805px;
     margin-top: -459px;
-}
-.sofa {
-    height: 355px;
 }
 
 /* block-content six */
@@ -816,7 +816,7 @@ hr {
     margin: 0 auto;
     z-index: 2;
 }
-.hero6 .title{
+.hero6__title{
     font-family: 'Yeseva One';
     font-style: normal;
     font-weight: 400;
@@ -833,10 +833,7 @@ hr {
     width: 147px;
     margin: -19px 0px 0px 627px;
 }
-.recommendations {
-    display: flex;
-}
-.recommendations__title {
+.hero6__icon ~ p {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
@@ -847,19 +844,22 @@ hr {
     margin: 23px 0px 0px 448px;
     letter-spacing: 0.1px;
 }
-.feedback {
+.recommendations {
+    display: flex;
+}
+.review {
     margin: 80px 218px -496px -73px;
     width: 500px;
 }
-.feedback__title {
+.review__title {
     display: flex;
 }
-.photo {
+.review__img {
     height: 98px;
     width: 98px;
     border-radius: 50%;
 }
-.feedback h4 {
+.review__title h4 {
     font-family: 'Yeseva One';
     font-style: normal;
     font-weight: 400;
@@ -869,7 +869,7 @@ hr {
     letter-spacing: -0.5px;
     margin: 21px 0px 0px 30px;
 }
-.feedback p {
+.review__text {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
@@ -880,18 +880,19 @@ hr {
     margin: 25px 0px 0px 0px;
     letter-spacing: 0.3px;
 }
-.work__time {
+.review__work {
     display: flex;
     text-transform: uppercase;
     color: var(--light);
     margin:  55px 0px 0px -26px;
 }
-.work__time img {
+.review__icon {
     height: 43px;
     width: 43px;
     padding: 12.5px 0px 0px 22px;
 }
-.work__time p {
+.review__work-text {
+    width: 410px;
     font-family: 'Yeseva One';
     font-style: normal;
     font-weight: 400;
@@ -899,33 +900,33 @@ hr {
     line-height: 20px;
     text-align: center;
 }
-.perimeter, .working__hours {
+.review__work--left, .review__work--right {
     display: flex;
     height: 70px;
     background-color: var(--primary);
 }
-.perimeter {
+.review__work--left {
     width: 174px;
     margin-right: 1px;
 }
-.working__hours {
+.review__work--right {
     width: 205px;
 }
-.working__hours p {
+.review__work--right p {
     margin-left: -10px;
 }
-.bottom_bg {
+.hero6__bg--bottom {
     display: inline-block;
     margin: 7px 0px 0px -233px;
     width: 1903px;
 }
-.left_bg {
+.hero6__bg--bottom-left {
     margin: 0px -28px 30px 0px;
     height: 950px;
     width: 964px;
     opacity: 1;
 }
-.right_bg {
+.hero6__bg--bottom-right {
     height: 600px;
     width: 962px;
     opacity: 0.07;
@@ -938,7 +939,7 @@ hr {
     margin: 0 auto;
     z-index: 2;
 }
-.questions {
+.feetback-form {
     position: relative;
     height: 574px;
     width: 1140px;
@@ -947,7 +948,7 @@ hr {
     margin: -350px 0px 0px 372px;
     z-index: 3;
 }
-.questions__title {
+.feetback-form__title {
     font-family: 'Yeseva One';
     font-style: normal;
     font-weight: 400;
@@ -960,7 +961,7 @@ hr {
     margin-bottom: 20px;
 }
 
-.questions-date {
+.feetback-form__date {
     display: grid;
     left: 0;
     right: 0;
@@ -971,30 +972,41 @@ hr {
     grid-template-rows: 72% 28%;
 }
 
-.questions__item {
+.feetback-form__item {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
 }
-.questions__item label {
+.feetback-form__lable {
+    display: block;
     font-size: 17px;
     color: rgba(255, 255, 255, 0.5);
 }
-.questions__item input {
+.feetback-form__input--top, .feetback-form__input--bottom {
+    margin: 5px -66px 0px -2px;
+    font-size: 16px;
+    font-weight: 400;
+    background: var(--dark);
+    color: var(--light);
+    border: none;
+    border-bottom: 1px solid rgba(54, 54, 54, 0.5);
+    padding-bottom: 10px;
+}
+.feetback-form__input--top {
     width: 295px;
 }
-.request__input {
+/* .request__input {
     line-height: 28px;
-}
-.question input {
+} */
+.feetback-form__input--bottom {
     width: 660px;
 }
-.third-checkbox {
+.checkboxThird {
     margin: 71px 0px 0px 383px;
 }
-.questions .button__submit {
+.feetback-form .button__submit {
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
@@ -1039,13 +1051,13 @@ hr {
     letter-spacing: -0.2px;
     z-index: 2;
 }
-.connection .icon {
+.hero7__icon {
     position: relative;
     display: block;
     margin: 31px 0px 0px 866px;
     z-index: 2;
 }
-.connection img {
+.hero7__icon--middle {
     margin: 0px 0px 0px 14px;
     height: 37px;
     width: 37px;
@@ -1060,24 +1072,27 @@ iframe {
 .footer__container {
     height: 171px;
 }
-
-.footer__container .logo {
+.footer__logo {
+    font-family: 'Nunito Sans';
+    font-weight: 400;
     margin: 5px 0px 0px -113px;
     font-size: 13px;
     letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--primary);
 }
 
-.footer-navigation {
+.footer-nav__list {
     margin: 6px 0px 0px -5px;
 }
 
-.footer-navigation__item {
+.footer-nav__item {
     font-size: 13px;
     margin: 0px 34px 0px 34px;
     letter-spacing: 1px;
 }
 
-.footer__container .phone {
+.footer__phone {
     margin: 6px -30px 0px 0px;
     color: var(--primary);
     font-family: 'Nunito Sans';
@@ -1087,276 +1102,17 @@ iframe {
     text-decoration-line: underline;
     letter-spacing: 0.4px;
 }
-.footer-button {
-    font-size: 12px;
-    padding: 15px 45px 10px 45px;
+.footer_button {
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Nunito Sans';
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--primary);
+    color: var(--light);
+    border: 0;
+    font-size: 14px;
+    padding: 16px 45px 11px 45px;
     margin: 0px -67px 0px 0px;
-}
-@media (max-width:1300px) {
-
-/* block-content one */
-
-    .header__container {
-        display: flex;
-        justify-content: space-around;
-    }
-    .header-navigation, .header-button {
-        display: none;
-    }
-    .phone {
-        color: var(--light);
-    }
-    .title {
-        margin: -10% 0% 0% 4.8%;
-    }
-    .hero__work {
-        max-width: 54.3%;
-        font-size: 26px;
-        margin: 0% 0% 10% 4%;
-    }
-
-    .hero__button button {
-        font-size: 100%;
-        Width: 92%;
-        Height: 80%;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
-    .hero__button {
-        height: 220px;
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    .submit__button {
-        margin-bottom: -100px;
-    }
-
-/* block-content two*/
-
-    .hero2__work br, .hero2-navigation, .scroll, .navigation label, .directon{
-        display: none;
-    }
-    .hero2-text__content .title1 {
-        font-size: 290%;
-        line-height: 130%;
-        margin: 4% 0% 0% 3%;
-    }
-    .hero2__work {
-        font-size: 140%;
-        margin: 5% 0% 0% 0%;
-    }
-    .title_hero2 {
-        text-align: center;
-    }
-
-    .hero2-text__content {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    .group_of_works {
-        margin: 10% -40% 0% 0%;
-    }
-
-    .slider {
-        width: 180%;
-        height: 80%;
-        margin: 20% 0% 0% -22%;
-    }
-    .right-scroll, .left-scroll {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-    }
-    .left-scroll {
-        background: url(images/left_arrow.svg) 50% no-repeat;
-        background-color: var(--primary);
-    }
-    .right_arrow, .left_arrow {
-        right: 50%;
-        top: 50%;
-        transform: translate(50%);
-        margin: 20% 0% 0% 15%;
-        width: 1rem;
-    }
-    .right-scroll {
-        background: url(images/right_arrow.svg) 50% no-repeat;
-        background-color: var(--primary);
-        margin: 0% 0% 0% 88.6%;
-    }
-    .navigation {
-        margin: 0% 0% 10% 30%;
-        width: 78%;
-    }
-
-/* block-content three*/
-
-    .hero3 {
-        background-color: var(--dark);
-    }
-    .hero3-title {
-        margin: 0% 0% 0% 40%;
-        padding: 10% 0% 0% 0%;
-    }
-    .hero3-icon {
-        margin: 2% 0% 0% 42%;
-    }
-    .video {
-        margin: 0% 0% 0% -6%;
-    }
-    .control {
-        margin: 0% 0% 0% 16%;
-        color: var(--light);
-    }
-    .form__body {
-        display: block;
-    }
-    hr {
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
-    .form__item {
-        margin: 0% 0% 0% 0%;
-    }
-    .form__input {
-        width: 2570%;
-        margin: 0% 0% 0% 0%;
-        background-color: var(--dark);
-        border-bottom: 1px solid rgba(54, 54, 54, 0.3);
-        color: var(--light);
-        border-bottom: 1px solid #fff;
-    }
-    .button__submit {
-        padding: 3% 60% 3% 60%;
-        margin: 25% 40% 0% -15%;
-    }
-    .first-checkbox .text {
-        font-size: 18px;
-        color: var(--light);
-    }
-    .first-checkbox {
-        padding: 0% 0% 8% 0%;
-        margin: -13% 0% 0% 10%;
-        order: 1;
-    }
-
-/* block-content four */
-
-    .hero4__title {
-        margin: 10% 8% 0% 0%;
-    }
-    .tool {
-        margin: 0% 8% 0% 0%;
-    }
-    .types__repair {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    .img__repair {
-        width: 80%;
-        height: 50%;
-    }
-    .services {
-        margin: -30% 0% 0% 0%;
-    }
-    .types__repair div {
-        margin: 0% 0% 0% 5%;
-        height: 150%;
-        width: 100%;
-    }
-    .types__repair div div {
-        margin: 0;
-        height: 10%;
-        width: 51.8%;
-    }
-    .specialist__services, .request, .benefit {
-        display: none;
-    }
-
-/* block-content five */
-
-    .hero5 {
-        position: relative;
-        width: 95%;
-        height: 750px;
-        z-index: 10;
-    }
-    .navigation,  .your__fantasies img, .hero5::before{
-        display: none;
-    }
-    .hero5 .container {
-        margin: 20% 0% 0% 0%;
-        padding: 0% 0% 0% 0%;
-    }
-    .hero5 .container .title {
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        font-size: 34px;
-        padding-bottom: 100%;
-    }
-
-/* block-content six*/
-
-    .hero6 {
-        display: none;
-    }
-
-/* block-content seven */
-
-    .hero7 {
-        background-color: var(--dark);
-    }
-    .footer, .connection::before {
-        display: none;
-    }
-    .connection {
-        background-image: none;
-    }
-    .questions {
-        position: relative;
-        width: 100%;
-        margin: -34% 0% 0% 0%;
-        padding-top: 35%;
-    }
-    .questions-date {
-        width: 92%;
-        height: 90%;
-        grid-template-columns: 100%;
-        grid-template-rows: repeat( 3, 33%);
-    }
-    .questions-date input {
-        width: 100%;
-    }
-    .third-checkbox {
-        margin: -5% 0% 0% 3%;
-    }
-    .third-checkbox .label {
-        display: inline;
-    }
-    .third-checkbox .label .text {
-        margin-left: 1%;
-    }
-    .questions .button__submit {
-        margin: 10% 0% 0% 3%;
-        width: 94%;
-    }
-    .connection {
-        margin: 30% 0% 0% 0%;
-        grid-template-rows: 55% 45% ;
-    }
-    iframe {
-        width: 63%;
-        height: 120%;
-        margin: 0% 0% 0% 2%;
-        grid-column: 1;
-        grid-row: 1;
-    }
-    .connection div .contacts {
-        margin: -5% 0% 0% -30%;
-    }
-    .connection div .icon {
-        margin: 2% 0% 0% 30%;
-    }
 }
